@@ -2,38 +2,37 @@ package com.wpcorp.DsLIst.Entity;
 
 import jakarta.persistence.*;
 
-import java.io.Serializable;
 import java.util.Objects;
-import java.util.UUID;
+
 @Entity
-@Table(name = "tb_Games")
+@Table(name = "tb_game")
 public class GameEntity  {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String title;
-    @Column(name = "year_game")
-    private int year;
+    @Column(name = "game_year")
+    private Integer year;
     private String genre;
-    private String plataform;
+    private String plataforms;
     private Double score;
     private String imgUrl;
     private String shortDescription;
     private String longDescription;
  public GameEntity(){}
-    public GameEntity(UUID id, String title, int year, String genre, String plataform, Double score, String imgUrl, String shortDescription, String longDescription) {
+    public GameEntity(long id, String title, int year, String genre, String plataforms, Double score, String imgUrl, String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
         this.genre = genre;
-        this.plataform = plataform;
+        this.plataforms = plataforms;
         this.score = score;
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
     }
 
-    public UUID getId() {
+    public long getId() {
         return id;
     }
 
@@ -61,12 +60,12 @@ public class GameEntity  {
         this.genre = genre;
     }
 
-    public String getPlataform() {
-        return plataform;
+    public String getPlataforms() {
+        return plataforms;
     }
 
-    public void setPlataform(String plataform) {
-        this.plataform = plataform;
+    public void setPlataforms(String plataforms) {
+        this.plataforms = plataforms;
     }
 
     public Double getScore() {

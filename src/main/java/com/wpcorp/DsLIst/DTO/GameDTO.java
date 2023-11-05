@@ -1,5 +1,6 @@
 package com.wpcorp.DsLIst.DTO;
 
+import com.wpcorp.DsLIst.Entity.GameEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,14 +10,14 @@ import java.util.UUID;
 
 public class GameDTO {
 
-    private UUID id;
+    private Long id;
     private String title;
     private int year;
     private String imgUrl;
     private String shortDescription;
     public GameDTO (){}
 
-    public GameDTO(UUID id, String title, int year, String imgUrl, String shortDescription) {
+    public GameDTO(GameEntity gameEntity) {
         this.id = id;
         this.title = title;
         this.year = year;
@@ -24,7 +25,7 @@ public class GameDTO {
         this.shortDescription = shortDescription;
     }
 
-    public UUID getId() {
+    public long getId() {
         return id;
     }
 

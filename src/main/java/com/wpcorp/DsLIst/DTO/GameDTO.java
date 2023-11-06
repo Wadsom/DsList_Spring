@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public class GameDTO {
 
-    private Long id;
+    private long id;
     private String title;
     private int year;
     private String imgUrl;
@@ -18,11 +18,11 @@ public class GameDTO {
     public GameDTO (){}
 
     public GameDTO(GameEntity gameEntity) {
-        this.id = id;
-        this.title = title;
-        this.year = year;
-        this.imgUrl = imgUrl;
-        this.shortDescription = shortDescription;
+        this.id = gameEntity.getId();
+        this.title = gameEntity.getTitle();
+        this.year = gameEntity.getYear();
+        this.imgUrl = gameEntity.getImgUrl();
+        this.shortDescription = gameEntity.getShortDescription();
     }
 
     public long getId() {
